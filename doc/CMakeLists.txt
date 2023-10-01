@@ -61,9 +61,6 @@ file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/package-lock.json
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/package.json
     DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
-# Disable jekyll on gh-pages
-file(TOUCH ${PROJECT_BINARY_DIR}/html/.nojekyll)
-
 ###############################################################################
 # Targets
 ###############################################################################
@@ -102,6 +99,14 @@ add_custom_target(GenerateHTML ALL
     WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
     DEPENDS GenerateXML
     COMMENT "Generating HTML"
+    VERBATIM
+    USES_TERMINAL
+)
+
+add_custom_target(TouchNojekyll ALL
+    COMMAND ${CMAKE_COMMAND} -E touch .nojekyll
+    WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/html
+    COMMENT "Create .nojekyll file"
     VERBATIM
     USES_TERMINAL
 )
