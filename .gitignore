@@ -1,0 +1,5 @@
+build
+*.zip
+.cache
+__pycache__
+html

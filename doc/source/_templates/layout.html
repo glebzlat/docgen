@@ -1,0 +1,14 @@
+{% extends "!layout.html" %}
+{% block extrahead %}
+  <link rel="stylesheet" href="_static/extra.css" type="text/css">
+{% endblock %}
+{% block document %}
+  {# the scroll to top button #}
+  <button type="button" class="btn" id="back-to-top-btn" style="display: none;" onclick="gotoTop()">
+    <img id="arrowup-img" src="_static/img/arrowheadup.svg" alt="">
+  </button>
+  {{ super() }}
+{% endblock %}
+{% block footer %}
+  <script src="_static/extra.js"></script>
+{% endblock %}

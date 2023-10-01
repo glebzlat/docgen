@@ -1,0 +1,62 @@
+# Configuration file for the Sphinx documentation builder.
+#
+# For the full list of built-in configuration values, see the documentation:
+# https://www.sphinx-doc.org/en/master/usage/configuration.html
+
+# -- Project information -----------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+
+import sys
+
+# These variables will be configured by CMake
+xml_dir = '@SPHINX_XML_DIR@'
+release = '@RELEASE_VERSION@'
+ext_dir = '@SPHINX_EXT_DIR@'
+html_static_path = ['@SPHINX_HTML_STATIC_PATH@']
+templates_path = ['@SPHINX_TEMPLATES_PATH@']
+
+sys.path.append(ext_dir)
+
+project = 'docgen'
+copyright = '2023, TheCreatureOfTheVoid'
+author = 'TheCreatureOfTheVoid'
+
+# -- General configuration ---------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
+
+extensions = [
+    'breathe',
+    'myst_parser',
+    'helloworld',
+    'codefile'
+]
+
+exclude_patterns = []
+
+highlight_language = "c++"
+
+# https://stackoverflow.com/questions/12206334/sphinx-autosummary-toctree-contains-reference-to-nonexisting-document-warnings
+numpy_show_class_members = False
+
+autosectionlabel_prefix_document = True
+
+# -- Options for HTML output -------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
+
+html_theme = 'sphinx_rtd_theme'
+
+# -- Breathe configuration ---------------------------------------------------
+
+breathe_projects = {
+    "DocGen": xml_dir
+}
+breathe_default_project = "DocGen"
+breathe_default_members = ('members', 'undoc-members')
+
+# -- MyST configuration ------------------------------------------------------
+
+myst_title_to_header = True
+myst_enable_extensions = [
+    "attrs_block",
+    "colon_fence"
+]

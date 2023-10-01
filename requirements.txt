@@ -1,0 +1,4 @@
+recommonmark
+sphinx-rtd-theme
+breathe>=4.35
+myst-parser
