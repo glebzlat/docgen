@@ -118,11 +118,6 @@ I've inserted the figure above using the `figure` directive already denoted in
 previous examples. See `doc/bytefield/packet.clj` for the source code of this
 picture.
 
-```{raw} html
-:file: bytefields/packet.svg
-```
-
-
 ## Requirements
 
 ```{note}
