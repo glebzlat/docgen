@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Getting started &mdash; docgen v0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=90b5f367"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API" href="api-index.html" />
+    <link rel="prev" title="Welcome to docgen’s documentation!" href="index.html" />
+  <link rel="stylesheet" href="_static/extra.css" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            docgen
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Welcome to docgen’s documentation!</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#inserting-figures">Inserting figures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-admonitions">Creating admonitions:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reference-to-figures">Reference to figures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generating-diagrams-with-bytefield-svg">Generating diagrams with bytefield-svg</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#various-admonitions">Various admonitions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#actual-requirements">Actual requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#features">Features</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#link-code-documentation">Link code documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#glossary">Glossary</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#custom-extension">Custom extension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#includefile">includefile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#theme-extending">Theme extending</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api-index.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">docgen</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Getting started</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/getting-started.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+  
+  <button type="button" class="btn" id="back-to-top-btn" style="display: none;" onclick="gotoTop()">
+    <img id="arrowup-img" src="_static/img/arrowheadup.svg" alt="">
+  </button>
+  
+           <div itemprop="articleBody">
+             
+  <section id="getting-started">
+<h1>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h1>
+<div class="warning admonition">
+<p class="admonition-title">Non standard Markdown</p>
+<p>This is a MyST Markdown extension.</p>
+</div>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>This is an example of how to generate C++ documentation with <a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx</a>
+using <a class="reference external" href="https://www.doxygen.nl/">Doxygen</a> with <a class="reference external" href="https://breathe.readthedocs.io/">Breathe</a>,
+<a class="reference external" href="https://myst-parser.readthedocs.io">MyST</a> for <a class="reference external" href="https://commonmark.org">CommonMark</a>
+support and <a class="reference external" href="https://bytefield-svg.deepsymmetry.org">bytefield-svg</a> for
+bytefield diagrams.</p>
+<p>This example is heavily inspired by
+<a class="reference external" href="https://medium.com/practical-coding/c-documentation-with-doxygen-cmake-sphinx-breathe-for-those-of-use-who-are-totally-lost-part-2-21f4fb1abd9f">this article</a>.</p>
+<p>See <a class="reference external" href="https://myst-parser.readthedocs.io/en/v0.17.1/sphinx/intro.html">Get started with MyST and Sphinx</a>,
+<a class="reference external" href="https://myst-parser.readthedocs.io/en/v0.17.1/syntax/syntax.html">MyST syntax</a>
+and <a class="reference external" href="https://myst-parser.readthedocs.io/en/v0.17.1/syntax/syntax.html#syntax-directives">MyST directives</a>.
+Also see <a class="reference external" href="https://jupyterbook.org/en/stable/reference/cheatsheet.html">Jupiter book syntax cheatsheet</a>.</p>
+<p>This is a sample article, which main purpose is to demonstrate MyST CommonMark
+capabilities. I will place CommonMark code after all samples. Maybe I write
+an extension for Sphinx to create spoilers using html <code class="docutils literal notranslate"><span class="pre">&lt;details&gt;</span></code> tag to hide
+things like this sample code. You also can open source of this page to see,
+how it is written.</p>
+<section id="inserting-figures">
+<h3>Inserting figures<a class="headerlink" href="#inserting-figures" title="Link to this heading"></a></h3>
+<p>I can easily create figures with images:</p>
+<figure class="align-center" id="linux-mascot-tux">
+<img alt="Tux Linux mascot" src="https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png" />
+<figcaption>
+<p><span class="caption-text">Tux</span><a class="headerlink" href="#linux-mascot-tux" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```{figure} https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png
+:name: linux-mascot-tux
+:alt: Tux Linux mascot
+:align: center
+
+Tux
+```
+</pre></div>
+</div>
+</section>
+<section id="creating-admonitions">
+<h3>Creating admonitions:<a class="headerlink" href="#creating-admonitions" title="Link to this heading"></a></h3>
+<div class="admonition-myst-syntax-peculiarities admonition">
+<p class="admonition-title">MyST syntax peculiarities</p>
+<p>Default directive syntax is using backticks ‘`’ fence. But I’ve seen in a
+couple sources that people using a colon ‘:’ fence. It didn’t work for me, and I
+was wondering, how they do it. Then I’ve found that MyST has its own extensions,
+(extension for an extension, you know) that allows to write directives using
+colon fence.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>:::{directive}
+text
+:::
+</pre></div>
+</div>
+<p>This is the default syntax:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```{directive}
+text
+\```
+</pre></div>
+</div>
+<p>You see the backslash in the code example above, because my default Neovim
+Markdown highlight engine does not display this correctly.</p>
+</div>
+<p>In the sample above I’ve used <code class="docutils literal notranslate"><span class="pre">admonition</span></code> directive.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Directives with colon fence allow to nest directives and code blocks, written
+with backtick fence, without indenting them with 4 spaces. Though in the sample
+above I’ve used <code class="docutils literal notranslate"><span class="pre">admonition</span></code> directive and placed code example that contains
+backticks with the help of 4-space indentation.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Backtick fenced code blocks work inside the colon blocks without indentation&quot;</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="reference-to-figures">
+<h3>Reference to figures<a class="headerlink" href="#reference-to-figures" title="Link to this heading"></a></h3>
+<p>I can reference to figures. See the figure Tux in the example 1.</p>
+<p><a class="reference internal" href="#linux-mascot-tux"><span class="std std-ref">Tux</span></a> is a Linux mascot.</p>
+<p>Using link syntax: <code class="docutils literal notranslate"><span class="pre">[Tux](linux-mascot-tux)</span></code>.</p>
+</section>
+<section id="generating-diagrams-with-bytefield-svg">
+<h3>Generating diagrams with bytefield-svg<a class="headerlink" href="#generating-diagrams-with-bytefield-svg" title="Link to this heading"></a></h3>
+<p>I finally added <code class="docutils literal notranslate"><span class="pre">bytefield-svg</span></code> to this example. Now I can create beautiful
+bytefield diagrams by writting them in Clojure. <code class="docutils literal notranslate"><span class="pre">bytefield-svg</span></code> is a utility,
+written in Clojure, that “translates” Clojure code into an SVG format.</p>
+<figure class="align-center" id="packet">
+<img alt="packet" src="_images/packet.svg" /></figure>
+<p>I’ve inserted the figure above using the <code class="docutils literal notranslate"><span class="pre">figure</span></code> directive already denoted in
+previous examples. See <code class="docutils literal notranslate"><span class="pre">doc/bytefield/packet.clj</span></code> for the source code of this
+picture.</p>
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" width="800" height="50" viewBox="0 0 800 50" ><text font-size="12" font-family="Palatino, Georgia, Times New Roman, serif" font-style="italic" x="25" y="9" text-anchor="middle" dominant-baseline="middle" >0</text><text font-size="12" font-family="Palatino, Georgia, Times New Roman, serif" font-style="italic" x="75" y="9" text-anchor="middle" dominant-baseline="middle" >1</text><text font-size="12" font-family="Palatino, Georgia, Times New Roman, serif" font-style="italic" x="125" y="9" text-anchor="middle" dominant-baseline="middle" >2</text><text font-size="12" font-family="Palatino, Georgia, Times New Roman, serif" font-style="italic" x="175" y="9" text-anchor="middle" dominant-baseline="middle" >3</text><text font-size="12" font-family="Palatino, Georgia, Times New Roman, serif" font-style="italic" x="225" y="9" text-anchor="middle" dominant-baseline="middle" >4</text><text font-size="12" font-family="Palatino, Georgia, Times New Roman, serif" font-style="italic" x="375" y="9" text-anchor="middle" dominant-baseline="middle" >Next N bytes</text><text font-size="12" font-family="Palatino, Georgia, Times New Roman, serif" font-style="italic" x="525" y="9" text-anchor="middle" dominant-baseline="middle" >N+5</text><rect x="0" y="19" height="30" width="50" fill="#a0ffa0" /><line x1="0" y1="19" x2="50" y2="19" stroke="#000000" stroke-width="1" /><line x1="0" y1="49" x2="50" y2="49" stroke="#000000" stroke-width="1" /><line x1="50" y1="19" x2="50" y2="49" stroke="#000000" stroke-width="1" /><line x1="0" y1="19" x2="0" y2="49" stroke="#000000" stroke-width="1" /><text font-size="18" font-family="Palatino, Georgia, Times New Roman, serif" x="25" y="35" text-anchor="middle" dominant-baseline="middle" >Addr</text><rect x="50" y="19" height="30" width="50" fill="#a0ffa0" /><line x1="50" y1="19" x2="100" y2="19" stroke="#000000" stroke-width="1" /><line x1="50" y1="49" x2="100" y2="49" stroke="#000000" stroke-width="1" /><line x1="100" y1="19" x2="100" y2="49" stroke="#000000" stroke-width="1" /><line x1="50" y1="19" x2="50" y2="49" stroke="#000000" stroke-width="1" /><text font-size="18" font-family="Palatino, Georgia, Times New Roman, serif" x="75" y="35" text-anchor="middle" dominant-baseline="middle" >ID</text><rect x="100" y="19" height="30" width="100" fill="#a0ffa0" /><line x1="100" y1="19" x2="200" y2="19" stroke="#000000" stroke-width="1" /><line x1="100" y1="49" x2="200" y2="49" stroke="#000000" stroke-width="1" /><line x1="200" y1="19" x2="200" y2="49" stroke="#000000" stroke-width="1" /><line x1="100" y1="19" x2="100" y2="49" stroke="#000000" stroke-width="1" /><text font-size="18" font-family="Palatino, Georgia, Times New Roman, serif" x="150" y="35" text-anchor="middle" dominant-baseline="middle" >Type</text><rect x="200" y="19" height="30" width="50" fill="#a0ffa0" /><line x1="200" y1="19" x2="250" y2="19" stroke="#000000" stroke-width="1" /><line x1="200" y1="49" x2="250" y2="49" stroke="#000000" stroke-width="1" /><line x1="250" y1="19" x2="250" y2="49" stroke="#000000" stroke-width="1" /><line x1="200" y1="19" x2="200" y2="49" stroke="#000000" stroke-width="1" /><text font-size="18" font-family="Palatino, Georgia, Times New Roman, serif" x="225" y="35" text-anchor="middle" dominant-baseline="middle" >N</text><line x1="250" y1="19" x2="450" y2="19" stroke="#000000" stroke-width="1" /><line x1="250" y1="49" x2="450" y2="49" stroke="#000000" stroke-width="1" /><line x1="250" y1="19" x2="250" y2="49" stroke="#000000" stroke-width="1" /><text font-size="18" font-family="Palatino, Georgia, Times New Roman, serif" x="350" y="35" text-anchor="middle" dominant-baseline="middle" >Payload</text><line x1="450" y1="19" x2="477.5" y2="19" stroke="#000000" stroke-width="1" /><line stroke-dasharray="1,3" x1="477.5" y1="19" x2="467.5" y2="49" stroke="#000000" stroke-width="1" /><line x1="467.5" y1="49" x2="450" y2="49" stroke="#000000" stroke-width="1" /><line x1="500" y1="19" x2="482.5" y2="19" stroke="#000000" stroke-width="1" /><line stroke-dasharray="1,3" x1="482.5" y1="19" x2="472.5" y2="49" stroke="#000000" stroke-width="1" /><line x1="472.5" y1="49" x2="500" y2="49" stroke="#000000" stroke-width="1" /><rect x="500" y="19" height="30" width="50" fill="#ffb0a0" /><line x1="500" y1="19" x2="550" y2="19" stroke="#000000" stroke-width="1" /><line x1="500" y1="49" x2="550" y2="49" stroke="#000000" stroke-width="1" /><line x1="550" y1="19" x2="550" y2="49" stroke="#000000" stroke-width="1" /><line x1="500" y1="19" x2="500" y2="49" stroke="#000000" stroke-width="1" /><text font-size="18" font-family="Palatino, Georgia, Times New Roman, serif" x="525" y="35" text-anchor="middle" dominant-baseline="middle" >CRC</text></svg></section>
+</section>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently I’m running Alpine Linux, so here I will mention Alpine Package Keeper
+(APK) package manager. Some packages may have another names in other repos, so
+check the name of the package for your distro.</p>
+</div>
+<section id="various-admonitions">
+<h3>Various admonitions<a class="headerlink" href="#various-admonitions" title="Link to this heading"></a></h3>
+<p>It is easy to create various types of admonitions. In the example above I
+used <code class="docutils literal notranslate"><span class="pre">note</span></code> directive.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>And this is the <code class="docutils literal notranslate"><span class="pre">warning</span></code> admonition.</p>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p><code class="docutils literal notranslate"><span class="pre">attention</span></code> admonition</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p><code class="docutils literal notranslate"><span class="pre">caution</span></code> admonition</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p><code class="docutils literal notranslate"><span class="pre">danger</span></code> admonition</p>
+</div>
+<div class="admonition error">
+<p class="admonition-title">Error</p>
+<p><code class="docutils literal notranslate"><span class="pre">error</span></code> admonition</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p><code class="docutils literal notranslate"><span class="pre">hint</span></code> admonition</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><code class="docutils literal notranslate"><span class="pre">important</span></code> admonition</p>
+</div>
+</section>
+<section id="actual-requirements">
+<h3>Actual requirements<a class="headerlink" href="#actual-requirements" title="Link to this heading"></a></h3>
+<p>Here I suppose that you already have installed Python3 and py3-pip. Also you
+should have some C++ compiler in your system.</p>
+<p>For Python packages see the <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>apk<span class="w"> </span>add<span class="w"> </span>doxygen<span class="w"> </span>cmake<span class="w"> </span>py3-sphinx
+pip3<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+</section>
+</section>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h2>
+<p>Do not forget that it is a <em>documentaton for C++ code</em>, and let me say a few
+about the C++ code example.</p>
+<section id="link-code-documentation">
+<h3>Link code documentation<a class="headerlink" href="#link-code-documentation" title="Link to this heading"></a></h3>
+<p>This is the main class of a library: <a class="reference internal" href="hello_world.html#_CPPv4N5hello11hello_worldE" title="hello::hello_world"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">hello::hello_world</span></code></a>. This class
+has ability to generate and print greetings (such functionality). Is has two
+methods: <a class="reference internal" href="hello_world.html#_CPPv4N5hello11hello_world12get_greetingENSt6stringE" title="hello::hello_world::get_greeting"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">hello::hello_world::get_greeting()</span></code></a> and
+<a class="reference internal" href="hello_world.html#_CPPv4N5hello11hello_world14print_greetingENSt6stringE" title="hello::hello_world::print_greeting"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">hello::hello_world::print_greeting()</span></code></a>.</p>
+<p>Also the library has pretty template function, that allows you to inspect types.
+<a class="reference internal" href="hello_world.html#_CPPv4I0EN5hello12inspect_typeEvv" title="template&lt;typename T&gt; void hello::inspect_type()"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">template</span> <span class="pre">&lt;typename</span> <span class="pre">T&gt;</span> <span class="pre">void</span> <span class="pre">hello::inspect_type()</span></code></a></p>
+<p>In two paragraphs above I link documentation placed on another page using
+<code class="docutils literal notranslate"><span class="pre">{cpp:func}</span></code> Sphinx role.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="hello_world.html#_CPPv4I0EN5hello12inspect_typeEvv" title="template&lt;typename T&gt; void hello::inspect_type()"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">template</span> <span class="pre">&lt;typename</span> <span class="pre">T&gt;</span> <span class="pre">void</span> <span class="pre">hello::inspect_type()</span></code></a> uses C++
+<code class="docutils literal notranslate"><span class="pre">__PRETTY_FUNCTION__</span></code> extension and won’t work for MSVC.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use Linux instead of Windows as it is a great system without bloatware with
+divine powers.</p>
+</div>
+<p>Note the another admonition type - <code class="docutils literal notranslate"><span class="pre">tip</span></code>.</p>
+<p>MyST uses <a class="reference external" href="https://pygments.org/">Pygments</a> for syntax highlighting, so
+you don’t need to link external JavaScript like Highlight.js. So cool!</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello World!&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Insert code examples is straightforward:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```cpp
+code
+```
+</pre></div>
+</div>
+</section>
+<section id="glossary">
+<h3>Glossary<a class="headerlink" href="#glossary" title="Link to this heading"></a></h3>
+<p>Well, Sphinx offers <code class="docutils literal notranslate"><span class="pre">{glossary}</span></code> directive, but it looks pretty poor. I
+don’t know, why - maybe theme I’ve used does not style it properly.</p>
+<dl class="simple glossary">
+<dt id="term-LOL">LOL<a class="headerlink" href="#term-LOL" title="Link to this term"></a></dt><dt id="term-Laugh-out-loud">: Laugh out loud<a class="headerlink" href="#term-Laugh-out-loud" title="Link to this term"></a></dt><dd></dd>
+</dl>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```{glossary}
+LOL
+: Laugh out loud
+```
+</pre></div>
+</div>
+<p>For adding custom extensions to Sphinx see
+<a class="reference external" href="https://www.sphinx-doc.org/en/master/development/tutorials/helloworld.html">Hello World extension</a>,
+<a class="reference external" href="https://docutils.sourceforge.io/docs/howto/rst-directives.html">Creating RST Directives</a>,
+<a class="reference external" href="https://www.sphinx-doc.org/en/master/development/index.html">Writing Sphinx Extensions</a>,
+<a class="reference external" href="https://sphinx-rtd-trial.readthedocs.io/en/latest/ext/tutorial.html">Writing a simple extension</a>.</p>
+</section>
+</section>
+<section id="custom-extension">
+<h2>Custom extension<a class="headerlink" href="#custom-extension" title="Link to this heading"></a></h2>
+<p>Yeah, I’ve already wrote a bunch of extensions for Sphinx. I <em>love</em> to code
+~~(and I have no many friends also and I have nothing to do)~~. Well, CommonMark
+has no strikethrough text, so you see tildes in the previous sentence.</p>
+<p>This is a simple <code class="docutils literal notranslate"><span class="pre">{helloworld}</span></code> directive that creates html <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;Hello</span> <span class="pre">World&lt;/&gt;</span></code>
+code and does nothing except.</p>
+<p>Hello World!</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```{helloworld}
+```
+</pre></div>
+</div>
+<section id="includefile">
+<h3>includefile<a class="headerlink" href="#includefile" title="Link to this heading"></a></h3>
+<p>The following directive, <code class="docutils literal notranslate"><span class="pre">{includefile}</span></code>, inserts code from a file. Pretty
+useful functionality. Initially I wanted to use Doxygen to embed code, because
+it reads source files and can do it. But it does it badly, so I’ve decided to do
+it my way.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;hello_world.hpp&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">hello</span><span class="o">::</span><span class="n">hello_world</span><span class="w"> </span><span class="n">my_hello</span><span class="p">;</span>
+
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Enter your name: &quot;</span><span class="p">;</span>
+
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+
+<span class="w">  </span><span class="n">my_hello</span><span class="p">.</span><span class="n">print_greeting</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This is the code:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```{includefile} ../examples/print_greeting.cpp
+:lang: cpp
+:begin: 7
+```
+</pre></div>
+</div>
+<p>Here I used <code class="docutils literal notranslate"><span class="pre">begin</span></code> parameter, that specifies the line, from which the code will
+be inserted. I can get only part of a file by specifying <code class="docutils literal notranslate"><span class="pre">:begin:</span></code> and <code class="docutils literal notranslate"><span class="pre">:end:</span></code>:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="n">hello</span><span class="o">::</span><span class="n">hello_world</span><span class="w"> </span><span class="n">my_hello</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```{includefile} ../examples/print_greeting.cpp
+:lang: cpp
+:begin: 11
+:end: 12
+```
+</pre></div>
+</div>
+<p>It is not so comfortable to count lines, so I added tag functionality. You need
+to place single line comments with opening and closing tag:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// &lt;&lt;opening-tag&gt;&gt;</span>
+<span class="p">...</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="p">...</span>
+<span class="c1">// &lt;&lt;/closing-tag&gt;&gt;</span>
+</pre></div>
+</div>
+<p>And the code between tags will be inserted into a documentation. Doxygen has
+similar functionality, but i did it cooler &gt;:)</p>
+<p>See the file <code class="docutils literal notranslate"><span class="pre">examples/type_inspect.cpp</span></code>.</p>
+<p>These two code blocks illustrate <code class="docutils literal notranslate"><span class="pre">tag</span></code> usage. Here is the block with
+<code class="docutils literal notranslate"><span class="pre">simple-example</span></code> tag:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```{includefile} ../examples/type_inspect.cpp
+:lang: cpp
+:tag: simple-example
+```
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="n">hello</span><span class="o">::</span><span class="n">inspect_type</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>And with <code class="docutils literal notranslate"><span class="pre">complicated-example</span></code> tag:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```{includefile} ../examples/type_inspect.cpp
+:lang: cpp
+:tag: complicated-example
+```
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">  </span><span class="n">hello</span><span class="o">::</span><span class="n">inspect_type</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">  </span><span class="n">hello</span><span class="o">::</span><span class="n">inspect_type</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">add_rvalue_reference_t</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">&gt;&gt;</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>This extension also handles nested tags. If the tag-like line appears inside
+code, it will be removed. In the following example I will insert code
+inside <code class="docutils literal notranslate"><span class="pre">sample-1</span></code> tag, which has nested <code class="docutils literal notranslate"><span class="pre">type-pack-sample</span></code> tag. For this example
+I took part of my <a class="reference external" href="https://glebzlat.github.io/type_pack">type-pack code</a> code.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="k">using</span><span class="w"> </span><span class="n">tp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">type_pack</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">  </span><span class="k">using</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">at_t</span><span class="o">&lt;</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">tp</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">  </span><span class="n">hello</span><span class="o">::</span><span class="n">inspect_type</span><span class="o">&lt;</span><span class="n">type</span><span class="o">&gt;</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>How it is inserted:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```{includefile} ../examples/type_inspect.cpp
+:lang: cpp
+:tag: sample-1
+```
+</pre></div>
+</div>
+<p>Pay attention that the code that you see on the page has not tag-like lines.
+They’re removed.</p>
+<p>Nested tag inside the <code class="docutils literal notranslate"><span class="pre">sample-1</span></code>.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="k">using</span><span class="w"> </span><span class="n">tp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">type_pack</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">  </span><span class="k">using</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">at_t</span><span class="o">&lt;</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">tp</span><span class="o">&gt;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>I can use <code class="docutils literal notranslate"><span class="pre">begin</span></code> and <code class="docutils literal notranslate"><span class="pre">end</span></code> parameters inside tags. In this case, I count lines
+from the opening tag. In the following example I use <code class="docutils literal notranslate"><span class="pre">end</span></code>.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">just_type</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">using</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">T</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Ts</span><span class="o">&gt;</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">type_pack</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="k">constexpr</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="nf">size</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">sizeof</span><span class="p">...(</span><span class="n">Ts</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="k">constexpr</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">empty</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">using</span><span class="w"> </span><span class="n">empty_pack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">type_pack</span><span class="o">&lt;&gt;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>How it is inserted:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```{includefile} ../examples/type_inspect.cpp
+:lang: cpp
+:tag: type-pack-impl
+:end: 12
+```
+</pre></div>
+</div>
+<p>And here I use <code class="docutils literal notranslate"><span class="pre">begin</span></code>:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="o">&gt;</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Error_Type_Pack_Out_Of_Range</span><span class="p">;</span>
+
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">Idx</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">Count</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">TP</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="o">&gt;</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">at_helper</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">using</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">Error_Type_Pack_Out_Of_Range</span><span class="o">&lt;</span><span class="n">TP</span><span class="o">&gt;::</span><span class="n">type</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">Idx</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">Count</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Ts</span><span class="o">&gt;</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">at_helper</span><span class="o">&lt;</span><span class="n">Idx</span><span class="p">,</span><span class="w"> </span><span class="n">Count</span><span class="p">,</span><span class="w"> </span><span class="n">type_pack</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="w">                 </span><span class="k">typename</span><span class="w"> </span><span class="nc">std</span><span class="o">::</span><span class="n">enable_if</span><span class="o">&lt;</span><span class="n">Idx</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Count</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="o">&gt;::</span><span class="n">type</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">using</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">T</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">Idx</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">Count</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Ts</span><span class="o">&gt;</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">at_helper</span><span class="o">&lt;</span><span class="n">Idx</span><span class="p">,</span><span class="w"> </span><span class="n">Count</span><span class="p">,</span><span class="w"> </span><span class="n">type_pack</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="w">                 </span><span class="k">typename</span><span class="w"> </span><span class="nc">std</span><span class="o">::</span><span class="n">enable_if</span><span class="o">&lt;</span><span class="n">Idx</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Count</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="o">&gt;::</span><span class="n">type</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">using</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">at_helper</span><span class="o">&lt;</span><span class="n">Idx</span><span class="p">,</span><span class="w"> </span><span class="n">Count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">type_pack</span><span class="o">&lt;</span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="o">&gt;::</span><span class="n">type</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">Idx</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">TP</span><span class="o">&gt;</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">at</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">at_helper</span><span class="o">&lt;</span><span class="n">Idx</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">TP</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{};</span>
+
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">Idx</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">TP</span><span class="o">&gt;</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="n">at_t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">at</span><span class="o">&lt;</span><span class="n">Idx</span><span class="p">,</span><span class="w"> </span><span class="n">TP</span><span class="o">&gt;::</span><span class="n">type</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>How it is inserted:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```{includefile} ../examples/type_inspect.cpp
+:lang: cpp
+:tag: type-pack-impl
+:begin: 13
+```
+</pre></div>
+</div>
+<p>Well, I found that Sphinx offers directives for including code from files:
+<code class="docutils literal notranslate"><span class="pre">include</span></code> and <code class="docutils literal notranslate"><span class="pre">literalinclude</span></code>. But I am unstoppable, so I continue to use my
+own directive. I’ve added a possibility to emphasize lines. So I can create
+fancy explanations of my code:</p>
+<p>“If the unspecified <code class="docutils literal notranslate"><span class="pre">at_helper</span></code> is called, it will try to evaluate
+<code class="docutils literal notranslate"><span class="pre">Error_Type_Pack_Out_Of_Range::type</span></code>. As this struct has no definition, the
+compilation error will occur.”</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="o">&gt;</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Error_Type_Pack_Out_Of_Range</span><span class="p">;</span>
+
+<span class="hll"><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">Idx</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">Count</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">TP</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="o">&gt;</span>
+</span><span class="hll"><span class="k">struct</span><span class="w"> </span><span class="nc">at_helper</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="w">  </span><span class="k">using</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">Error_Type_Pack_Out_Of_Range</span><span class="o">&lt;</span><span class="n">TP</span><span class="o">&gt;::</span><span class="n">type</span><span class="p">;</span>
+</span><span class="hll"><span class="p">};</span>
+</span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">Idx</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">Count</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Ts</span><span class="o">&gt;</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">at_helper</span><span class="o">&lt;</span><span class="n">Idx</span><span class="p">,</span><span class="w"> </span><span class="n">Count</span><span class="p">,</span><span class="w"> </span><span class="n">type_pack</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="w">                 </span><span class="k">typename</span><span class="w"> </span><span class="nc">std</span><span class="o">::</span><span class="n">enable_if</span><span class="o">&lt;</span><span class="n">Idx</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Count</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="o">&gt;::</span><span class="n">type</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">using</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">T</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">Idx</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">Count</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Ts</span><span class="o">&gt;</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">at_helper</span><span class="o">&lt;</span><span class="n">Idx</span><span class="p">,</span><span class="w"> </span><span class="n">Count</span><span class="p">,</span><span class="w"> </span><span class="n">type_pack</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="w">                 </span><span class="k">typename</span><span class="w"> </span><span class="nc">std</span><span class="o">::</span><span class="n">enable_if</span><span class="o">&lt;</span><span class="n">Idx</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Count</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="o">&gt;::</span><span class="n">type</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">using</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">at_helper</span><span class="o">&lt;</span><span class="n">Idx</span><span class="p">,</span><span class="w"> </span><span class="n">Count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">type_pack</span><span class="o">&lt;</span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="o">&gt;::</span><span class="n">type</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">Idx</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">TP</span><span class="o">&gt;</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">at</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">at_helper</span><span class="o">&lt;</span><span class="n">Idx</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">TP</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{};</span>
+
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">Idx</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">TP</span><span class="o">&gt;</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="n">at_t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">at</span><span class="o">&lt;</span><span class="n">Idx</span><span class="p">,</span><span class="w"> </span><span class="n">TP</span><span class="o">&gt;::</span><span class="n">type</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Pay attention that emphasize line count starts from the <code class="docutils literal notranslate"><span class="pre">begin</span></code> line.</p>
+</section>
+<section id="theme-extending">
+<h3>Theme extending<a class="headerlink" href="#theme-extending" title="Link to this heading"></a></h3>
+<p>Also pay attention that all code samples has the Copy button on the top-right.
+So professional. And do not forget to use “scroll to top” button (it appears
+on the bottom-right side of a page, when you far enough from the top.</p>
+<p>In Sphinx you can easily extend themes and “inject” your custom functionality.
+See <a class="reference external" href="https://www.sphinx-doc.org/en/master/development/theming.html">Sphinx theming</a>.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to docgen’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="api-index.html" class="btn btn-neutral float-right" title="API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, TheCreatureOfTheVoid.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+  <script src="_static/extra.js"></script>
+
+
+</body>
+</html>
