@@ -61,6 +61,9 @@ file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/package-lock.json
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/package.json
     DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
+# Disable jekyll on gh-pages
+file(TOUCH ${PROJECT_BINARY_DIR}/html/.nojekyll)
+
 ###############################################################################
 # Targets
 ###############################################################################
