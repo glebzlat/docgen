@@ -1,4 +1,4 @@
-recommonmark
+sphinx
 sphinx-rtd-theme
 breathe>=4.35
 myst-parser
